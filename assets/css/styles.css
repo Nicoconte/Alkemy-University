@@ -1,0 +1,466 @@
+*{margin:0px; padding:0px;box-sizing: border-box;}
+
+body {
+    width:100%;
+    height: auto;
+}
+
+#main-container{
+    width:100%;
+    height: 654px; /* Res: 1366 x 768 */
+}
+
+/* Navbar */
+
+.navbar-container {
+    width:100%;
+    height:15%;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.navbar-logo {
+    width:60%;
+    height:100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;    
+}
+
+.navbar-logo img{
+    width:15%;
+    height:25%;
+}
+
+.navbar-navigation-buttons{
+    width:40%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-navigation-buttons a:first-of-type {
+    background-color:#d7385e;
+    border-radius: 30px;
+}
+
+.navbar-navigation-buttons a{
+    background-color: transparent;
+    margin:0px 0px 0px 20px;
+}
+
+.navbar-navigation-buttons a:hover{
+    color:#d7385e;
+}
+
+/* Sup navbar for dashboard */
+
+.dashboard-sup-navbar-container{
+    width:100%;
+    height:10%;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Work Sans', sans-serif;
+    background-color: #d7385e;
+}
+
+.dashboard-sup-burguer{
+    width:70%;
+    height:100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.dashboard-sup-actions{
+    width:30%;
+    height:100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.dropdown {
+    margin-right:80px;
+}
+
+.dropdown p {
+    font-size:13px;
+    text-align: center;
+}
+
+.dropdown a:last-of-type {
+    transition:0.3s ease-in-out;
+}
+
+.dropdown a:last-of-type:hover{
+    color:white;
+    background-color: rgb(139, 46, 46, 0.8);
+}
+
+.dashboard-container{
+    width:100%;
+    height:85%;
+    display: flex;
+    flex-direction: row;
+}
+
+.dashboard-lat-container {
+    width:17%;
+    height:100%;
+    transition:0.5s ease-in-out;
+    font-family: 'Work Sans', sans-serif;
+}
+
+
+.dashboard-lat-buttons{
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;    
+}
+
+.lat-button{
+    width: 100%;
+    height:10%;
+    display: flex;
+    flex-direction: row;
+    margin:5px 0px 0px 0px;
+}
+
+.lat-button a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;   
+    color:black; 
+}
+
+.lat-button a:hover{
+    background-color: #b65c4a;
+    color:white;
+}
+
+
+.button-icon {
+    width:30%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:20px;
+}
+
+.text-button{
+    width:70%;
+    height:100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size:17px;
+}
+
+.dashboard-content-container{
+    width:83%;
+    height:100%;
+    background-color: rgb(236, 236, 236);
+    transition:0.5s ease-in-out;
+    border: 1px solid rgb(207, 206, 206);
+}
+
+.dashboard-content-head{
+    width:100%;
+    height:20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.teacher-container, .subject-container, .student-container{
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Work Sans', sans-serif;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.my-subject-container {
+    width:100%;
+    height:100%;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.my-subjects{
+    width:100%;
+    height: 90%;
+    overflow:auto;
+    display: block;
+}
+
+.card {
+    width:32%;
+    height:80%;
+    position: relative;
+    float:left;
+    margin:30px 0px 0px 40px;
+    overflow: scroll;
+    scrollbar-width:none;
+}
+
+.action-description {
+    width:100%;
+    height:10%;
+    display: flex;
+    justify-content: start;
+    align-items: center;    
+    border-bottom:1px solid black;
+}
+
+.action-description h4 {
+    margin:0px 0px 0px 20px;
+}
+
+.action-description a {
+    background-color: transparent;
+    color:#3d7ea6;
+}
+
+.teacher-form, .subject-form, .student-form{
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.teacher-form form, .student-form form{
+    width:50%;
+    height:50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.subject-form{
+    scrollbar-width: none;  /* Firefox */
+    overflow:scroll;
+}
+
+.subject-form form {
+    width:50%;
+    height:75%;
+    display: flex;
+    flex-direction: column; 
+}
+
+.teacher-form button, .subject-form button, .student-form button {
+    background-color:#d7385e;
+    color:white;
+}
+
+/* Footer */
+.footer-container{
+    width:100%;
+    height:10%;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.footer-text{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.footer-text span{
+    margin:0px 0px 5px 0px;
+}
+
+.footer-text a{
+    color:black;
+}
+
+/* Home */
+
+.home-container{
+    width:100%;
+    height:80%;
+    display: flex;
+    flex-direction: row;
+}
+
+.home-text {
+    width:40%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-align: left;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.home-text blockquote{
+    width:60%;
+    height:70%;
+    margin:0px 0px 0px 90px;
+}
+
+.home-text h1{
+    font-weight: 900;
+    color:#3d7ea6;
+}
+
+.home-text p{
+    margin: 20px 0px 0px 0px;
+}
+
+.home-text a{
+    background-color: transparent;
+    border: 0.1px solid grey;
+    border-radius:10px;
+    box-shadow: 0px 5px 8px grey;
+    margin:20px 0px 0px 0px;
+}
+
+.home-img {
+    width:60%;
+    height:100%;
+}
+
+.home-img img{
+    width:100%;
+    height:100%;
+}
+
+
+/* Login */
+
+.login-container{
+    width:100%;
+    height: 80%;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.login-text{
+    width:100%;
+    height:3%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    color:#ee6f57;
+}
+
+.login-option-container{
+    width:100%;
+    height: 97%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+.login-option {
+    width: 29%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #3d7ea6;
+    border-radius: 5px;
+}
+
+.login-option a {
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: 0.1s ease-in-out;
+}
+
+.login-option img{
+    width:60%;
+    height: 70%;
+}
+
+.login-option h5 {
+    margin:15px 0px 0px 0px;
+}
+
+.login-option a:hover{
+    text-decoration: none;
+    box-shadow: 0px 8px 10px grey;
+    color:#d7385e;
+    border:1px solid #d7385e;
+}
+
+
+.login-form-container{
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.login-form-text{
+    width:100%;
+    height: 10%;
+    text-align: center;
+}
+
+.login-form, .login-img {
+    width:50%;
+    height:100%;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-form form{
+    width:60%;
+    height: 45%;
+    transition:0.3s ease-in-out;
+}
+
+.login-form form input{
+    border: 1px solid #ee6f57;
+}
+
+.login-form button {
+    width: 100%;
+    background-color: #d7385e;
+    color:white;
+    border-radius: 30px;
+}
+
+.login-form button:hover{
+    box-shadow: 1px 1px 10px black;
+}
+
+.login-img img{
+    width:100%;
+    height:100%;
+}
+
+@media(min-width:1400px) and (max-width:2000px) {
+    #main-container{
+        width:100%;
+        height:954px;
+    }
+
+    .login-option{
+        width:40%;
+    }
+}

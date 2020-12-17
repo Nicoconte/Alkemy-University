@@ -1,0 +1,58 @@
+{% extends "index.html" %}
+
+
+{% block navbar %}
+    {% include 'layout/dashboard_sup_navbar_student.html' %}
+{% endblock navbar %}
+
+
+{% block body %}
+
+<div class="dashboard-container">
+
+    {% include "layout/dashboard_lateral_navbar_student.html" %}
+
+    <div class="dashboard-content-container">
+        <div class="subject-container">
+            <div class="action-description">
+                <h4>Subjects Available <i class="fa fa-book"></i> | </h4> <a href="{% url 'student-dashboard' %}" class="btn ml-3"> <i class="fa fa-arrow-left"></i> Back </a>
+                
+                {% if success != True and success != None %}
+                    <div  id="alert-message" class="alert alert-warning">
+                        <span> {{ msg }} </span>
+                    </div>
+                {% endif %}
+
+            </div>
+            <table class="table table-striped">
+                <tbody>
+                    {% if subjects %}
+                    {% for subject in subjects %}
+                    
+                    <tr class='text-center'>
+                        <td data-toggle="tooltip" data-placement="top" title="{{subject.name}}">{{ subject.name | truncatechars:20 }}</td>
+                        <td data-toggle="tooltip" data-placement="top" title="{{subject.description}}">{{ subject.description | truncatechars:10 }}</td>
+                        <td data-toggle="tooltip" data-placement="top" title="Capacity: {{subject.capacity}}">{{ subject.capacity }}</td>
+                        <td data-toggle="tooltip" data-placement="top" title="Teacher: {{subject.teacher}}">{{ subject.teacher | truncatechars:20 }}</td>
+                        <td data-toggle="tooltip" data-placement="top" title="Schedule: {{subject.schedule}}">{{ subject.schedule }}</td>
+                        <td>
+                            <a href="{% url 'subscribe-to' subject.id %}" class='btn btn-sm btn-info' data-toggle="tooltip" data-placement="top" title="Subscribe">
+                                <i class='fa fa-pencil'></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+                    {% else %}
+                    <tr class="text-center">
+                        <td><span> There are no subjects yet <i class="fa fa-exclamation-triangle"></i> </span></td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+{% endblock body %}

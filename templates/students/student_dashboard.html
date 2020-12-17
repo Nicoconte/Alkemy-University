@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+
+{% load static%}
+
+{% block navbar %}
+    {% include 'layout/dashboard_sup_navbar_student.html' %}
+{% endblock navbar %}
+
+{% block body %}
+
+<div class="dashboard-container">
+
+    {% include 'layout/dashboard_lateral_navbar_student.html' %}
+
+    <div class="dashboard-content-container">
+        <div class="dashboard-content-head">
+            <span>{{msg}} | {{token}}</span>
+        </div>
+        <div class="dashboard-content-body">
+        
+        </div>
+    </div>
+
+</div>
+
+{% endblock body %}

@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+
+
+{% block navbar %}
+    {% include 'layout/dashboard_sup_navbar_admin.html' %}
+{% endblock navbar %}
+
+
+{% block body %}
+
+<div class="dashboard-container">
+
+    {% include "layout/dashboard_lateral_navbar_admin.html" %}
+
+    <div class="dashboard-content-container">
+        <div class="student-container">
+            <div class="action-description">
+                <h4> Our Students <i class="fa fa-graduation-cap"></i> | </h4> <a href="{% url 'list-all-students' %}" class="btn ml-3"><i class="fa fa-arrow-left"></i> Back </a>
+             </div>
+            <div class="student-form">
+
+                {% if success %}
+                    <div id="alert-message" class="alert alert-success alert-dismissible fade show" role="alert">
+                        <span>{{msg}}</span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <i class="fa fa-times"></i> </button>
+                    </div>
+                {% elif success == False %}
+                    <div id="alert-message" class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <span>{{msg}}</span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <i class="fa fa-times"></i> </button>
+                    </div>
+                {% endif %}
+
+                <h3>Introduce student's information</h3>
+                <form action="{% url 'create-student' %}" method="POST">
+                    {% csrf_token %}
+                    {{ form }}
+                    <button class="btn mt-3">Create <i class="fa fa-check"></i> </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock body %}

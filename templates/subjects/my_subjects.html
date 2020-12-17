@@ -1,0 +1,43 @@
+{% extends "index.html" %}
+
+{% block navbar %}
+    {% include 'layout/dashboard_sup_navbar_student.html' %}
+{% endblock navbar %}
+
+
+{% block body %}
+
+<div class="dashboard-container">
+
+    {% include "layout/dashboard_lateral_navbar_student.html" %}
+
+    <div class="dashboard-content-container">
+        <div class="my-subject-container">
+            <div class="action-description">
+                <h4>My Subjects <i class="fa fa-book"></i> | </h4> <a href="{% url 'student-dashboard' %}" class="btn ml-3"> <i class="fa fa-arrow-left"></i> Back</a>
+            </div>
+            <div class="my-subjects">
+                {% if my_subjects %}
+                {% for subject in my_subjects %}
+                    <div class="card border-primary mb-3" style="max-width: 18rem;">
+                        <div class="card-header">{{ subject.subject.name }} </div>
+                        <div class="card-body text-primary">
+                        <h5 class="card-title">{{ subject.subject.schedule }} | {{ subject.subject.teacher.name }}</h5>
+                        <p class="card-text">
+                            {{ subject.subject.description }}
+                        </p>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% else %}
+                    <div class="alert alert-primary w-100 d-flex justify-content-center align-items-center">
+                        <span>There are no subjects yet <i  class="fa fa-exclamation-triangle"></i> </span>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock body %}

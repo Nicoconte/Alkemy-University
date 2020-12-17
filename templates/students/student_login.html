@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block body %}
+
+<div class="login-container">
+    <div class="login-form-container">
+        <div class="login-form">
+            <div class="login-form-text">
+                <h3 class="text-primary">Welcome to Alkemy Alumni &#128218;</h3>                
+            </div>
+            <form action="{% url 'student-auth' %}" method="POST">            
+                {% csrf_token %}
+                {{form}}
+                <button class="btn mt-3" type="submit">Login</button>
+                <span id="span-error-msg" class="text-danger mt-4">{{msg}}</span>
+            </form>
+            <span><a href="{% url 'admin-account-login' %}">Do you work here? Login as administrator!</a></span>
+        </div>
+        <div class="login-img">
+            <img src="{% static 'img/login_student.jpg' %}" alt="">            
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

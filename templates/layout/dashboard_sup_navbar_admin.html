@@ -1,0 +1,19 @@
+<div class="dashboard-sup-navbar-container">
+    <div class="dashboard-sup-burguer">
+        <button class="btn ml-5" id="burguer-btn"> <i class="fa fa-bars"></i> </button>
+        <h5 class="text-light mt-1 ml-3">Alkemy Managment</h5>
+    </div>
+    <div class="dashboard-sup-actions">
+        <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-user"></i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                <p> Admin </p>
+                <a class="dropdown-item" href="#"> <i class="fa fa-gear"></i> Configurations </a>
+                <a class="dropdown-item" href="{% url 'administrator-logout' %}"> <i class="fa fa-times"></i> Sign out </a>
+            </div>
+        </div>
+    </div>
+</div>

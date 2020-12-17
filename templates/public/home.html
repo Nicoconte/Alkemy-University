@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{% load static %}
+{% block body %}
+
+<div class="home-container">
+    <div class="home-text">
+        <blockquote>
+            <h1>Online</h1>
+            <h1>Education</h1>
+            <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla possimus ducimus
+            nihil temporibus reiciendis tempore delectus adipisci, alias quo atque at dolor officiis
+            explicabo eos sint magnam repellendus unde fugit!
+            ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+
+            <a class="btn">Learn more</a>
+        </blockquote>
+
+    </div>
+    <div class="home-img">
+        <img src="{% static 'img/home.jpg' %}" alt="Home image">
+    </div>
+</div>
+
+{% endblock body %}

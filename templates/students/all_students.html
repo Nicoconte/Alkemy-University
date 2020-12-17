@@ -1,0 +1,50 @@
+{% extends "index.html" %}
+
+
+{% block navbar %}
+    {% include 'layout/dashboard_sup_navbar_admin.html' %}
+{% endblock navbar %}
+
+
+{% block body %}
+
+<div class="dashboard-container">
+
+    {% include "layout/dashboard_lateral_navbar_admin.html" %}
+
+    <div class="dashboard-content-container">
+        <div class="student-container">
+            <div class="action-description">
+                <h4>Our Students <i class="fa fa-graduation-cap"></i> | </h4> <a href="{% url 'new-student' %}" class="btn ml-3">Create a new one</a>
+            </div>
+            <table class="table table-striped">
+                <tbody>
+                    {% if students %}
+                    {% for student in students %}
+                        <tr class="text-center">
+                            <td data-toggle="tooltip" data-placement="top" title="Student: {{student.name}}"> {{student.name}} </td>
+                            <td data-toggle="tooltip" data-placement="top" title="Access code: {{student.student_account.username}}"> {{student.student_account.username}} </td>
+                            <td data-toggle="tooltip" data-placement="top" title="DNI: {{student.dni}}"> {{student.dni}} </td>
+                            <td>
+                                <a href="{% url 'update-student' student.id %}" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Update data">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                                <a href="{% url 'delete-student' student.student_account.id %}" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    {% else %}
+                    <tr class="text-center">
+                        <td><span> There are no students <i class="fa fa-exclamation-triangle"></i> </span></td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+{% endblock body %}

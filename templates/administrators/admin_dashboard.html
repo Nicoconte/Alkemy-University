@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+
+{% load static%}
+
+{% block navbar %}
+    {% include 'layout/dashboard_sup_navbar_admin.html' %}
+{% endblock navbar %}
+
+{% block body %}
+
+<div class="dashboard-container">
+
+    {% include 'layout/dashboard_lateral_navbar_admin.html' %}
+
+    <div class="dashboard-content-container">
+        <div class="dashboard-content-head">
+            <div class="alert alert-success">
+                <span>Cantidad total de alummos: {{student_count}} </span>
+            </div>
+            <div class="alert alert-primary">
+                <span>Cantidad total de materias: {{subject_count}}</span>
+            </div>
+            <div class="alert alert-warning">
+                <span>Cantidad total de profesores: {{teacher_count}}</span>
+            </div>
+        </div>
+        <div class="dashboard-content-body">
+        
+        </div>
+    </div>
+
+</div>
+
+{% endblock body %}

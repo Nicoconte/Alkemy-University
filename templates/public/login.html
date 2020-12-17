@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block body %}
+
+<div class="login-container">
+    <div class="login-text">
+        <h3>Choose account type <i class="fa fa-hand-o-down"></i> </h3>
+    </div>
+    <div class="login-option-container container">
+        <div class="login-option">
+            <a href="{% url 'admin-account-login' %}">
+                <img src="{% static 'img/head.png'%}" alt="">
+                <h5>Administrator</h5>
+            </a>
+        </div>
+        <div class="login-option">
+            <a href="{% url 'student-account-login' %}">
+                <img src="{% static 'img/student.png'%}" alt="">
+                <h5>Student</h5>
+            </a>
+        </div>
+    </div>    
+</div>
+
+{% endblock body %}
